@@ -1,0 +1,31 @@
+.mid-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 30px;
+  gap: 40px;
+}
+
+.mid-section .mid-text {
+  flex: 1;
+}
+
+.mid-section .mid-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.mid-section .mid-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.mid-section .mid-image {
+  flex: 1;
+}
+
+.mid-section .mid-image img {
+  width: 100%;
+  border-radius: 8px;
+}

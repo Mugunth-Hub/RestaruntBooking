@@ -1,11 +1,24 @@
-import React from "react";
-import "./Mid.css"; // optional, create a Mid.css for styling
+import midImage from "../Gallery/img1.jpeg";
+import "./Mid.css";
 
-export default function Mid() {
+function MidSection() {
   return (
-    <section className="mid-section">
-      <h2>Welcome to Our Website</h2>
-      <p>This is the middle section. Add your content here.</p>
-    </section>
+    <div className="mid-section">
+      <div className="mid-left">
+        <h2>Find Your Dream Property</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Wisi nemore fastidii at vis, eos equidem admodum.
+          Discover premium locations with trusted guidance.
+        </p>
+        <button>Explore Now</button>
+      </div>
+
+      <div className="mid-right">
+        <img src={midImage} alt="Property" />
+      </div>
+    </div>
   );
 }
+
+export default MidSection;

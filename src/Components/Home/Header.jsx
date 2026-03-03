@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import img1 from "../Gallery/Photo/img1.jpeg";
-import img2 from "../Gallery/Photo/img2.jpeg";
-import img3 from "../Gallery/Photo/img3.jpg";
+import img1 from "../Gallery/img1.jpeg";
+import img2 from "../Gallery/img2.jpeg";
+import img3 from "../Gallery/img3.jpg";
 import "./Header.css";
 
 function Header() {

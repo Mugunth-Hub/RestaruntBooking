@@ -16,9 +16,8 @@ function Navbar() {
       <div className="nav-center">
         <NavLink to="/home">Home</NavLink>
         <NavLink to="/about">About</NavLink>
-        <NavLink to="/gallery">Gallery</NavLink>
         <NavLink to="/contact">Contact</NavLink>
-        <NavLink to="/booking">Booking</NavLink>
+        <NavLink to="/Projects">Projects</NavLink>
       </div>
 
       {/* Right side */}

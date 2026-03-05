@@ -4,7 +4,7 @@
   justify-content: space-between;
   height: 100vh;
   padding: 0 100px;
-  background-color: #ffe5e5; /* light red */
+  background-color: #d0d0d0; /* light red */
 }
 
 .mid-left {
@@ -27,7 +27,7 @@
 .mid-left button {
   padding: 12px 30px;
   border: none;
-  background-color: #ff6b6b;
+  background-color: #443f3f;
   color: white;
   font-size: 16px;
   cursor: pointer;

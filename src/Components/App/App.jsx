@@ -5,7 +5,7 @@ import Home from "../Home/Home";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
 import Gallery from "../Gallery/Gallery";
-import Booking from "../Booking/Booking";
+import Projects from "../Projects/Projects";
 import { Outlet } from "react-router-dom";
 
 export function Layout() {
@@ -29,7 +29,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/booking" element={<Booking />} />
+        <Route path="/Projects" element={<Projects />} />
       </Route>
     </Routes>
   );

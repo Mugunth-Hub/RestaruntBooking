@@ -1,11 +1,18 @@
+import Header from "./Header";
+import Hero from "./Hero";
+import Mid from "./Mid";
+import Footer from "./Footer";
+
+
+
 function About() {
   return (
-    <div>
-      <h2>About Us</h2>
-      <p>
-        We follow traditional values with modern execution.
-      </p>
-    </div>
+    <>
+      <Header />
+      <Hero />
+      <Mid />
+      <Footer />
+    </>
   );
 }
 

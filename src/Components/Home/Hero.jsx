@@ -29,19 +29,36 @@ function Hero() {
   ];
 
   return (
-    <div className="hero-row">
-      {properties.map((item, i) => (
-        <div key={i} className="hero-card">
-          <img src={item.image} alt={item.title} />
-          <div className="hero-content">
-            <p className="location">{item.location}</p>
-            <h3>{item.title}</h3>
-            <p className="description">{item.desc}</p>
-            <h4 className="price">{item.price}</h4>
+    <section className="hero-section">
+
+      {/* Heading Row */}
+      <div className="hero-header">
+        <h2>Our choice of popular real estate</h2>
+        <span className="arrow">→</span>
+      </div>
+
+      {/* Cards */}
+      <div className="hero-row">
+        {properties.map((item, i) => (
+          <div key={i} className="hero-card">
+            
+            <div className="image-wrapper">
+              <img src={item.image} alt={item.title} />
+              <span className="badge">Sell</span>
+            </div>
+
+            <div className="hero-content">
+              <p className="location">{item.location}</p>
+              <h3>{item.title}</h3>
+              <p className="description">{item.desc}</p>
+              <h4 className="price">{item.price}</h4>
+            </div>
+
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+
+    </section>
   );
 }
 

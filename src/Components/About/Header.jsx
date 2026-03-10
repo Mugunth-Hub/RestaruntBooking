@@ -1,5 +1,8 @@
 import "./Header.css";
-import teamImage from "../Gallery/img1.jpeg";
+import teamImage from "../Gallery/About1.jpg";
+import visionIcon from "../Gallery/Eye.png";
+import teamIcon from "../Gallery/Team.png";
+import solutionIcon from "../Gallery/Solutions.png";
 
 function Header() {
   return (
@@ -56,34 +59,40 @@ function Header() {
       {/* RIGHT SIDE */}
       <div className="about-right">
 
-        <div className="info-box">
-          <h3>👁 Our Vision</h3>
-          <p>
-            To be a leader in the real estate market, offering unparalleled
-            services in luxury, sustainability, and vacation properties.
-            We aim to set new standards in excellence and client satisfaction.
-          </p>
-        </div>
+  <div className="info-box">
+    <h3>
+      <img src={visionIcon} className="icon" alt="Vision" />
+      Our Vision
+    </h3>
+    <p>
+      To be a leader in the real estate market, offering unparalleled
+      services in luxury, sustainability, and vacation properties.
+    </p>
+  </div>
 
-        <div className="info-box">
-          <h3>👥 Expert Team</h3>
-          <p>
-            Our team comprises seasoned professionals with extensive
-            experience in luxury real estate, sustainable housing,
-            and vacation rentals.
-          </p>
-        </div>
+  <div className="info-box">
+    <h3>
+      <img src={teamIcon} className="icon" alt="Team" />
+      Expert Team
+    </h3>
+    <p>
+      Our team comprises seasoned professionals with extensive
+      experience in luxury real estate and sustainable housing.
+    </p>
+  </div>
 
-        <div className="info-box">
-          <h3>💡 Tailored Solutions</h3>
-          <p>
-            We offer customized real estate services that align with your
-            specific lifestyle and investment goals, ensuring a seamless
-            and personalized experience.
-          </p>
-        </div>
+  <div className="info-box">
+    <h3>
+      <img src={solutionIcon} className="icon" alt="Solutions" />
+      Tailored Solutions
+    </h3>
+    <p>
+      We offer customized real estate services aligned with your
+      lifestyle and investment goals.
+    </p>
+  </div>
 
-      </div>
+</div>
 
     </section>
   );

@@ -1,0 +1,72 @@
+.experts {
+  text-align: center;
+  padding: 80px 40px;
+  background: #f7f7f7;
+}
+
+.tag {
+  border: 1px solid #999;
+  background: transparent;
+  padding: 8px 18px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.experts h2 {
+  font-size: 38px;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+}
+
+.experts-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.expert-card{
+  width:230px;
+  text-align:center;
+}
+
+.expert-img{
+  width:230px;
+  height:260px;
+  overflow:hidden;
+  border-radius:30px;
+}
+
+.expert-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position: top;
+}
+.expert-photo{
+  object-fit:cover;
+  object-position:center;
+}
+
+.expert-photo:last-child{
+  object-position:top;
+}
+
+.expert-card h3 {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.expert-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+.view-btn {
+  margin-top: 40px;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: 1px solid #000;
+  background: transparent;
+  cursor: pointer;
+}

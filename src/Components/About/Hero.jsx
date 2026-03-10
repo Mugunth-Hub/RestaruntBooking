@@ -1,53 +1,86 @@
 import "./Hero.css";
-import heroImage from "../Gallery/img3.jpg"; // change if needed
+import residential from "../Gallery/residential.png";
+import representation from "../Gallery/representation.png";
+import manager from "../Gallery/manager.png";
+import profit from "../Gallery/profit.png";
+import audit from "../Gallery/audit.png";
+import Solutions from "../Gallery/Solutions.png";
 
 function Hero() {
   return (
-    <section className="hero">
+    <section className="services">
 
-      {/* TOP CONTENT */}
-      <div className="hero-top">
-        <button className="hero-badge">What We Offer</button>
+     
 
-        <h1>COMPREHENSIVE REAL ESTATE SOLUTIONS</h1>
+      <h2 className="title">
+        EXPLORE OUR RANGE OF <br />
+        EXPERT REAL ESTATE SERVICES
+      </h2>
 
-        <p>
-          Our comprehensive services encompass luxury property sales,
-          sustainable green building investments, and premium vacation rentals.
-        </p>
-      </div>
+      <div className="services-grid">
 
-      {/* MAIN CONTENT */}
-      <div className="hero-content">
-
-        {/* LEFT SIDE */}
-        <div className="hero-left">
-          <div className="icon">🏙</div>
-          <h3>Luxury Residences</h3>
+        <div className="card">
+          <div className="icon-circle">
+            <img src={residential} alt="" />
+          </div>
+          <h3>Property Sales</h3>
           <p>
-            Experience unparalleled elegance in our luxury residences,
-            featuring exquisite design, premium amenities, and prime
-            locations for the most discerning tastes.
+            Expertly promoting and selling your property to attract qualified buyers.
           </p>
         </div>
 
-        {/* CENTER IMAGE */}
-        <div className="hero-image">
-          <img src={heroImage} alt="Luxury Property" />
-
-          <div className="image-label">
-            <h2>01</h2>
-            <span>Luxury Residences</span>
+        <div className="card">
+          <div className="icon-circle">
+            <img src={representation} alt="" />
           </div>
+          <h3>Buyer Representation</h3>
+          <p>
+            Guiding you through the home-buying process, prioritizing your interests.
+          </p>
         </div>
 
-        {/* RIGHT SIDE VERTICAL */}
-        <div className="hero-right">
-          <div className="vertical-item">02 Eco Green Buildings</div>
-          <div className="vertical-item">03 Unique Vacation Homes</div>
+        <div className="card">
+          <div className="icon-circle">
+            <img src={manager} alt="" />
+          </div>
+          <h3>Rental Management</h3>
+          <p>
+            Managing tenant relations, maintenance, and finances to maximize returns.
+          </p>
+        </div>
+
+        <div className="card">
+          <div className="icon-circle">
+            <img src={profit} alt="" />
+          </div>
+          <h3>Investment Consulting</h3>
+          <p>
+            Providing strategic advice to help you capitalize on real estate opportunities.
+          </p>
+        </div>
+
+        <div className="card">
+          <div className="icon-circle">
+            <img src={audit} alt="" />
+          </div>
+          <h3>Property Valuation</h3>
+          <p>
+            Accurately assessing your property's value for sales or investments.
+          </p>
+        </div>
+
+        <div className="card">
+          <div className="icon-circle">
+            <img src={Solutions} alt="" />
+          </div>
+          <h3>Tailored Solutions</h3>
+          <p>
+            Delivering customized real estate services aligned with your goals.
+          </p>
         </div>
 
       </div>
+
     </section>
   );
 }

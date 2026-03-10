@@ -1,68 +1,3 @@
-/* CONTACT */
-
-.contact-section{
-text-align:center;
-padding:80px 20px 40px;   /* bottom padding reduced */
-}
-
-
-.contact-section h2{
-font-size:36px;
-margin:20px 0;
-}
-
-.contact-text{
-max-width:700px;
-margin:auto;
-margin-bottom:40px;   /* less gap */
-color:#555;
-}
-
-
-/* FORM CARD */
-
-.contact-card{
-max-width:750px;
-margin:auto;
-padding:40px 50px;
-border-radius:25px;
-background:#f8f8f8;
-border:1px solid #ddd;
-}
-
-.form-row{
-display:flex;
-gap:30px;
-margin-bottom:30px;
-}
-
-input, textarea{
-width:100%;
-border:none;
-border-bottom:1px solid #999;
-padding:10px;
-background:transparent;
-outline:none;
-}
-
-textarea{
-margin-top:10px;
-resize:none;
-}
-
-.contact-btn{
-margin-top:25px;
-background:#2c2c2c;
-color:white;
-border:none;
-padding:12px 35px;
-border-radius:30px;
-cursor:pointer;
-}
-
-
-/* FOOTER */
-
 .footer-cta {
   display: flex;
   align-items: center;
@@ -89,7 +24,7 @@ cursor:pointer;
 
 .cta-buttons {
   display: flex;
-  gap: 20px;
+  gap: auto;
 }
 
 .contact-btn {
@@ -97,17 +32,18 @@ cursor:pointer;
   border: 1px solid black;
   background: transparent;
   cursor: pointer;
-  border-radius: 30px;
-  color: #2c2c2c;
-  }
+  border-radius: 50px;
+ 
+}
 
 .phone-btn {
-  padding: 5px 10px;
-  background: rgb(0, 0, 0);
+  padding: 14px 30px;
+  background: black;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+   margin: 25px 0;
 }
 
 .cta-right {

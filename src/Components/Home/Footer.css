@@ -28,11 +28,11 @@
 }
 
 .contact-btn {
-  padding: 14px 30px;
+  padding: 5px 10px;
   border: 1px solid black;
   background: transparent;
   cursor: pointer;
-  border-radius: 30px;
+  border-radius: 5px;
 }
 
 .phone-btn {

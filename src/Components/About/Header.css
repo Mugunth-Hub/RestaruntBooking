@@ -69,3 +69,10 @@
   color: #555;
   line-height: 1.6;
 }
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  position: relative;
+  top: 30px;   /* move icon slightly down */
+}

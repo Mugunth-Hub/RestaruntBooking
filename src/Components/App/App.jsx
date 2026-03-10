@@ -7,12 +7,14 @@ import Contact from "../Contact/Contact";
 import Gallery from "../Gallery/Gallery";
 import Projects from "../Projects/Projects";
 import { Outlet } from "react-router-dom";
+import BackToTop from "./BackToTop";
 
 export function Layout() {
   return (
     <>
       <Navbar />
       <Outlet />
+      <BackToTop />
     </>
   );
 }
@@ -32,6 +34,7 @@ function App() {
         <Route path="/Projects" element={<Projects />} />
       </Route>
     </Routes>
+    
   );
 }
 

@@ -11,14 +11,33 @@ function Navbar() {
       <div className="logo">
         <img src={logo} alt="Logo" />
       </div>
+       <nav className="navbar">
 
-      {/* Center links */}
+      <NavLink to="/home" className="nav-link">
+        Home
+      </NavLink>
+
+      <NavLink to="/about" className="nav-link">
+        About
+      </NavLink>
+
+      <NavLink to="/projects" className="nav-link">
+        Projects
+      </NavLink>
+
+      <NavLink to="/contact" className="nav-link">
+        Contact
+      </NavLink>
+
+    </nav>
+
+      {/* Center links
       <div className="nav-center">
         <NavLink to="/home">Home</NavLink>
         <NavLink to="/about">About</NavLink>
         <NavLink to="/contact">Contact</NavLink>
         <NavLink to="/Projects">Projects</NavLink>
-      </div>
+      </div> */}
 
       {/* Right side */}
       <div className="nav-right">

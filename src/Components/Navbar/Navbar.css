@@ -61,3 +61,16 @@
 .nav-right button:hover {
   background-color: #e55b5b;
 }
+
+.nav-link{
+text-decoration:none;
+color:black;
+margin-right:20px;
+font-weight:500;
+}
+
+/* Active page */
+
+.nav-link.active{
+color:red;
+}

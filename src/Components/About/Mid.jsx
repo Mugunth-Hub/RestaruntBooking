@@ -1,10 +1,10 @@
 import "./Mid.css";
 
-import img1 from "../Gallery/img1.jpeg";
-import img2 from "../Gallery/img2.jpeg";
-import img3 from "../Gallery/img3.jpg";
-import img4 from "../Gallery/graph.png";
-import img5 from "../Gallery/docs.png";
+import img1 from "../Gallery/Aimg1.jpg";
+import img2 from "../Gallery/Aimg2.jpg";
+import img3 from "../Gallery/Aimg3.png";
+import img4 from "../Gallery/Aimg4.png";
+import img5 from "../Gallery/Aimg5.png";
 
 function Mid() {
   const steps = [

@@ -15,8 +15,10 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  cursor: pointer;   /* ⭐ shows clickable */
 }
 
+/* dark overlay */
 .header::after {
   content: "";
   position: absolute;
@@ -24,10 +26,11 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); 
-  z-index: 1; 
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: none;   /* ⭐ VERY IMPORTANT FIX */
 }
 
+/* text */
 .header-text {
   position: absolute;
   top: 50%;
@@ -40,12 +43,13 @@ body {
   z-index: 2;
 }
 
+/* dots */
 .header-dots {
   position: absolute;
-  bottom: 15px;
-  right: 15px;
+  bottom: 20px;
+  right: 30px;
   display: flex;
-  gap: 10px;
+  gap: 12px;
   z-index: 2;
 }
 
@@ -55,9 +59,11 @@ body {
   border-radius: 50%;
   background: rgba(255,255,255,0.6);
   cursor: pointer;
-  transition: background 0.3s;
 }
 
 .header-dots .active {
-  background: black;
+  background: white;
+}
+.header-text {
+  pointer-events: none;
 }

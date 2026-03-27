@@ -8,6 +8,7 @@ import Gallery from "../Gallery/Gallery";
 import Projects from "../Projects/Projects";
 import { Outlet } from "react-router-dom";
 import BackToTop from "./BackToTop";
+import Details from "../Home/Details/Details";
 
 export function Layout() {
   return (
@@ -22,19 +23,24 @@ export function Layout() {
 function App() {
   return (
     <Routes>
-      {/* Login WITHOUT Navbar */}
-      <Route path="/" element={<Login />} />
 
-      {/* All pages WITH Navbar */}
+      {/* Layout wrapper */}
       <Route element={<Layout />}>
+
+        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/details/:id" element={<Details />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/Projects" element={<Projects />} />
+        <Route path="/projects" element={<Projects />} />
+
       </Route>
+
+      {/* Login outside layout */}
+      <Route path="/login" element={<Login />} />
+
     </Routes>
-    
   );
 }
 

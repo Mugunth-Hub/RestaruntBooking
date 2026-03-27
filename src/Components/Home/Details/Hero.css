@@ -1,0 +1,35 @@
+.details-hero {
+  background: #f2f2f2;
+  padding: 80px 0;
+}
+
+.details-container {
+  width: 70%;
+  margin: auto;
+}
+
+/* tag button */
+.tag {
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 20px;
+  background: white;
+}
+
+/* headings */
+.details-container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  letter-spacing: 1px;
+}
+
+/* paragraph */
+.details-container p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}

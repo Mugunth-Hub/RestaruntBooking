@@ -1,10 +1,13 @@
 import "./Footer.css";
-import bgImage from "../Gallery/img2.jpeg"; 
+import bgImage from "../../Gallery/img2.jpeg";
+import { useNavigate } from "react-router-dom";
 
 function Footer() {
+
+  const navigate = useNavigate();   // ⭐ create navigator
+
   return (
     <>
-      
       <div className="footer-cta">
 
         <div className="cta-left">
@@ -15,8 +18,16 @@ function Footer() {
           </p>
 
           <div className="cta-buttons">
-            <button className="contact-btn">Contact us</button>
-            <button className="phone-btn">📞 8870036584</button>
+            <button
+              className="contact-btn"
+              onClick={() => navigate("/contact")}   // ⭐ navigation added
+            >
+              Contact us
+            </button>
+
+            <button className="phone-btn">
+              📞 8870036584
+            </button>
           </div>
         </div>
 
@@ -80,7 +91,6 @@ function Footer() {
         </div>
 
       </div>
-
     </>
   );
 }

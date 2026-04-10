@@ -1,0 +1,223 @@
+/* CTA Section */
+.footer-cta {
+  background: #f3f3f3;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+/* Title */
+.cta-title {
+  font-size: 42px;
+  font-weight: 700;
+  max-width: 480px;
+  line-height: 1.2;
+  color: #1f1f1f;
+  margin-bottom: 0;
+}
+
+/* Subtitle */
+.cta-text {
+  color: #555;
+  font-size: 16px;
+  max-width: 420px;
+  margin-top: 15px;
+  line-height: 1.7;
+}
+
+/* Buttons */
+.contact-btn,
+.phone-btn {
+  transition: 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.phone-btn:hover {
+  transform: translateY(-2px);
+  background: #222;
+}
+
+/* Shared button sizing */
+.custom-btn {
+  height: 48px;
+  min-width: 180px;
+  padding: 0 24px;
+  border-radius: 30px;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-outline-dark.custom-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Right image block */
+.cta-image {
+  height: 100%;
+  min-height: 420px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  position: relative;
+}
+
+/* Newsletter box */
+.newsletter-box {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  background: #fff;
+  padding: 28px;
+  width: 330px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.newsletter-box h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1f1f1f;
+}
+
+/* Newsletter text */
+.newsletter-text {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.newsletter-input {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.newsletter-input input {
+  flex: 1;
+  min-height: 46px;
+  border: 1px solid #ddd;
+  outline: none;
+  padding: 0 14px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.newsletter-input button {
+  min-height: 46px;
+  padding: 0 22px;
+  border: none;
+  background: #e0b86c;
+  color: #111;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.newsletter-input button:hover {
+  background: #d2aa60;
+}
+
+/* Footer Main */
+.footer-main {
+  background: #f9f9f9;
+  padding: 60px 0;
+}
+
+.footer-main h3,
+.footer-main h4 {
+  color: #1f1f1f;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+/* Footer description */
+.footer-desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+  max-width: 250px;
+}
+
+/* Footer links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.footer-links li:hover {
+  color: #000;
+  transform: translateX(3px);
+}
+
+/* Phone icons */
+.phone-icon,
+.phone-btn i {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-cta {
+    padding: 60px 0;
+  }
+
+  .cta-title {
+    font-size: 32px;
+  }
+
+  .cta-text {
+    font-size: 15px;
+  }
+
+  .newsletter-box {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .cta-image {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 576px) {
+  .cta-title {
+    font-size: 26px;
+  }
+
+  .custom-btn {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .newsletter-input {
+    flex-direction: column;
+  }
+
+  .newsletter-input button {
+    width: 100%;
+  }
+}

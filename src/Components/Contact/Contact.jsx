@@ -1,9 +1,13 @@
 import "./Contact.css";
-import bgImage from "../Gallery/img2.jpeg";
 import axios from "axios";
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 function Contact() {
+  const location = useLocation();
+
+  const propertyId = location.state?.propertyId || "";
+  const propertyTitle = location.state?.propertyTitle || "";
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -23,132 +27,124 @@ function Contact() {
   const submit = async (e) => {
     e.preventDefault();
 
-    console.log("Sending Data :", formData);
+    const dataToSend = {
+      name: `${formData.firstName} ${formData.lastName}`.trim(),
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      propertyId: propertyId,
+      propertyTitle: propertyTitle
+    };
 
-    await axios.post("http://localhost:5000/contact", formData);
+    console.log("Sending Data :", dataToSend);
 
-    console.log("Data Sent Successfully");
+    try {
+      await axios.post("http://localhost:5000/contact", dataToSend);
+
+      alert("Enquiry submitted successfully");
+
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: ""
+      });
+    } catch (error) {
+      console.log(error);
+      alert("Something went wrong");
+    }
   };
 
   return (
-    <>
-      {/* CONTACT SECTION */}
-      <section className="contact-section">
-
-        <h2>
+    <section className="contact-section container py-5">
+      <div className="text-center mb-5">
+        <h2 className="contact-heading">
           LET’S MAKE YOUR PROPERTY JOURNEY <br />
           EFFORTLESS
         </h2>
 
-        <p className="contact-text">
-          Have questions or ready to take the next step? Whether you're looking
-          to buy, rent, or invest, our team is here to guide you every step of the way.
+        <p className="contact-text mx-auto">
+          Have questions or ready to take the next step? Our team is here to guide you.
         </p>
 
-        <div className="contact-card">
-          <form onSubmit={submit}>
-
-            <div className="form-row">
-              <input name="firstName" placeholder="First Name" onChange={handleChange}/>
-              <input name="lastName" placeholder="Last Name" onChange={handleChange}/>
-            </div>
-
-            <div className="form-row">
-              <input name="email" placeholder="Email" onChange={handleChange}/>
-              <input name="phone" placeholder="Phone Number" onChange={handleChange}/>
-            </div>
-
-            <textarea name="message" rows="4" placeholder="What can we help you ?" onChange={handleChange}/>
-
-            <button type="submit" className="contact-btn">
-              Book a Call
-            </button>
-
-          </form>
-        </div>
-
-      </section>
-
-
-      {/* FOOTER CTA */}
-
-      <div className="footer-cta">
-
-        <div className="cta-left">
-          <h2>Need help? Talk to our expert</h2>
-          <p>
-            Talk to our experts or Browse through more properties
-          </p>
-
-          <div className="cta-buttons">
-            <button className="contact-btn">Contact us</button>
-            <button className="phone-btn">📞 8870036584</button>
+        {propertyTitle && (
+          <div className="selected-property-badge mt-3">
+            Enquiring for: <strong>{propertyTitle}</strong>
           </div>
-        </div>
-
-        <div
-          className="cta-right custom-bg-height"
-          style={{ backgroundImage: `url(${bgImage})` }}
-        >
-          <div className="newsletter-box">
-            <h3>Sign to newsletter</h3>
-            <p>
-              Sign up to get the latest on new Products,
-              Promotions, Design news and more
-            </p>
-
-            <div className="newsletter-input">
-              <input type="email" placeholder="Your E-mail" />
-              <button>sign up</button>
-            </div>
-          </div>
-        </div>
-
+        )}
       </div>
 
+      <div className="contact-card shadow-sm mx-auto">
+        <form onSubmit={submit}>
+          <div className="row g-4">
+            <div className="col-md-6">
+              <input
+                type="text"
+                name="firstName"
+                className="form-control custom-input"
+                placeholder="First Name"
+                value={formData.firstName}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-      {/* FOOTER */}
+            <div className="col-md-6">
+              <input
+                type="text"
+                name="lastName"
+                className="form-control custom-input"
+                placeholder="Last Name"
+                value={formData.lastName}
+                onChange={handleChange}
+              />
+            </div>
 
-      <div className="footer-main">
+            <div className="col-md-6">
+              <input
+                type="email"
+                name="email"
+                className="form-control custom-input"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-        <div className="footer-col">
-          <h3>Estate View</h3>
-          <p>
-            A contemporary theme we designed specifically for real estate
-            and property showcase websites.
-          </p>
-        </div>
+            <div className="col-md-6">
+              <input
+                type="text"
+                name="phone"
+                className="form-control custom-input"
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={handleChange}
+              />
+            </div>
 
-        <div className="footer-col">
-          <h4>Contact us</h4>
-          <p>
-            Bangalore, Electronic Street, KA <br />
-            8870036584 <br />
-            EstateView@gmail.com
-          </p>
-        </div>
+            <div className="col-12">
+              <textarea
+                name="message"
+                rows="5"
+                className="form-control custom-input custom-textarea"
+                placeholder="What can we help you with?"
+                value={formData.message}
+                onChange={handleChange}
+                required
+              ></textarea>
+            </div>
 
-        <div className="footer-col">
-          <h4>Categories</h4>
-          <ul>
-            <li>Recent Properties</li>
-            <li>To sell</li>
-            <li>To buy</li>
-            <li>To rent</li>
-          </ul>
-        </div>
-
-        <div className="footer-col">
-          <h4>Links</h4>
-          <ul>
-            <li>About us</li>
-            <li>Latest news</li>
-            <li>FAQ</li>
-          </ul>
-        </div>
-
+            <div className="col-12 text-center">
+              <button type="submit" className="btn contact-btn px-4 py-2">
+                Book a Call
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
-    </>
+    </section>
   );
 }
 

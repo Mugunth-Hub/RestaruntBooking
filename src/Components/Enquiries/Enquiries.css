@@ -1,0 +1,77 @@
+/* Page Layout */
+.enquiries-container {
+  padding: 40px;
+  background: #f5f7fa;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Title */
+.enquiries-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+/* Grid Layout */
+.enquiries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+.enquiry-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+  border-left: 4px solid #4a90e2;
+}
+
+.enquiry-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Name */
+.enquiry-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Email */
+.enquiry-email {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0 10px;
+}
+
+/* Message */
+.enquiry-message {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Property ID */
+.enquiry-property {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Empty State */
+.no-enquiries {
+  text-align: center;
+  color: #777;
+  font-size: 16px;
+  margin-top: 40px;
+}
+.status {
+  font-size: 12px;
+  font-weight: 600;
+  color: green;
+}

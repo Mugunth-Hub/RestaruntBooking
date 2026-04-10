@@ -110,3 +110,10 @@ margin-top: 20px;
   font-size:13px;
   color:#777;
 }
+.selected-property {
+  background: #eef4ff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}

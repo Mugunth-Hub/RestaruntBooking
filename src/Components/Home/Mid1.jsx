@@ -9,7 +9,9 @@ function Mid1() {
 
       <div className="mid1-row">
         <div className="mid1-card">
-          <FaHome className="icon" />
+          <div className="icon-box">
+            <FaHome />
+          </div>
           <h3>Find real estate</h3>
           <p>
             Nullam sollicitudin blandit eros eu pretium.
@@ -18,7 +20,9 @@ function Mid1() {
         </div>
 
         <div className="mid1-card">
-          <FaUserTie className="icon" />
+          <div className="icon-box">
+            <FaUserTie />
+          </div>
           <h3>Meet realtor</h3>
           <p>
             Nullam sollicitudin blandit eros eu pretium.
@@ -27,7 +31,9 @@ function Mid1() {
         </div>
 
         <div className="mid1-card">
-          <FaFileAlt className="icon" />
+          <div className="icon-box">
+            <FaFileAlt />
+          </div>
           <h3>Documents</h3>
           <p>
             Nullam sollicitudin blandit eros eu pretium.
@@ -36,7 +42,9 @@ function Mid1() {
         </div>
 
         <div className="mid1-card">
-          <FaKey className="icon" />
+          <div className="icon-box">
+            <FaKey />
+          </div>
           <h3>Take the keys</h3>
           <p>
             Nullam sollicitudin blandit eros eu pretium.

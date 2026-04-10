@@ -74,5 +74,5 @@
   height: 24px;
   margin-right: 10px;
   position: relative;
-  top: 30px;   /* move icon slightly down */
+  top: -5px;   /* move icon slightly down */
 }

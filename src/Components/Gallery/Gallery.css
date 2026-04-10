@@ -1,0 +1,66 @@
+.gallery-container {
+  padding: 60px 20px;
+  background: #f8f9fb;
+}
+
+/* Title */
+.gallery-title {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #1f1f1f;
+}
+
+/* Grid Layout */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+.gallery-item {
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Image */
+.gallery-item img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Hover effect */
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Optional overlay effect */
+.gallery-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gallery-title {
+    font-size: 26px;
+  }
+
+  .gallery-item img {
+    height: 200px;
+  }
+}

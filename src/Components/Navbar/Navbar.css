@@ -1,76 +1,93 @@
-/* Reset link styles */
-.navbar a {
-  text-decoration: none;
+html {
+  scroll-behavior: smooth;
 }
 
-/* Navbar container */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background-color: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+body {
+  margin: 0;
+  padding-top: 0;
 }
 
-/* Logo */
-.logo img {
-  width: 120px; /* adjust logo size */
-  height: auto;
+.custom-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  min-height: 82px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
-/* Center links */
-.nav-center {
-  display: flex;
-  gap: 25px;
+.logo-img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
 }
 
-.nav-center a {
-  color: black;
+.navbar-nav .nav-link {
+  color: #333;
+  font-size: 17px;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: 0.3s;
 }
 
-.nav-center a:hover {
-  color: #ff6b6b; /* light red on hover */
+.navbar-nav .nav-link:hover {
+  color: #0d6efd;
 }
 
-/* Right side */
-.nav-right {
+.navbar-nav .nav-link.active {
+  color: #0d6efd;
+  font-weight: 700;
+}
+
+.nav-right-box {
+  min-width: fit-content;
+}
+
+.profile-wrapper {
   display: flex;
-  gap: 15px;
   align-items: center;
-}
-
-.nav-right a {
-  color: black;
-  font-size: 1.2rem;
-}
-
-.nav-right button {
-  padding: 6px 12px;
-  border: none;
-  background-color: #ff6b6b; /* button color */
-  color: white;
-  font-weight: bold;
+  gap: 10px;
   cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
 }
 
-.nav-right button:hover {
-  background-color: #e55b5b;
+.profile-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
 }
 
-.nav-link{
-text-decoration:none;
-color:black;
-margin-right:20px;
-font-weight:500;
+.profile-circle-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-/* Active page */
+.profile-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
 
-.nav-link.active{
-color:red;
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: #fff;
+    padding: 15px 0;
+  }
+
+  .nav-right-box {
+    margin-top: 15px;
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .profile-name {
+    font-size: 15px;
+  }
 }

@@ -1,66 +1,26 @@
 import "./Section2.css";
-import img1 from "../Gallery/img1.jpeg";
-import img2 from "../Gallery/img2.jpeg";
-import img3 from "../Gallery/img3.jpg";
-import img4 from "../Gallery/img3.jpg";
-import img5 from "../Gallery/img3.jpg";
-import img6 from "../Gallery/img3.jpg";
 import { useNavigate } from "react-router-dom";
-
-// ✅ Add real data
-const properties = [
-  {
-    id: 7,
-    img: img1,
-    tag: "Completed",
-    title: "Luxury Family Villa",
-    price: "₹6 Crores"
-  },
-  {
-    id: 8,
-    img: img2,
-    tag: "Completed",
-    title: "Green Valley Homes",
-    price: "₹2.5 Crores"
-  },
-  {
-    id: 9,
-    img: img3,
-    tag: "Completed",
-    title: "Urban City Flats",
-    price: "₹90 Lakhs"
-  },
-  {
-    id: 10,
-    img: img4,
-    tag: "Completed",
-    title: "Lake View Residency",
-    price: "₹3.2 Crores"
-  },
-  {
-    id: 11,
-    img: img5,
-    tag: "Completed",
-    title: "Premium Duplex House",
-    price: "₹4 Crores"
-  },
-  {
-    id: 12,
-    img: img6,
-    tag: "Completed",
-    title: "Modern Smart Villa",
-    price: "₹5.5 Crores"
-  }
-];
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Section2() {
-
   const navigate = useNavigate();
+  const [properties, setProperties] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/properties")
+      .then((res) => {
+        setProperties(res.data.slice(0, 6));
+      })
+      .catch((err) => {
+        console.log("Error fetching properties:", err.response?.data || err.message);
+      });
+  }, []);
 
   return (
     <section className="projects-section">
       <div className="projects-container">
-
         <button className="section-btn">Completed Property</button>
 
         <h2 className="section-title">
@@ -72,18 +32,17 @@ function Section2() {
           {properties.map((item) => (
             <div
               className="property-card"
-              key={item.id}
-              onClick={() => navigate(`/details/${item.id}`)}
+              key={item._id}
+              onClick={() => navigate(`/details/${item._id}`)}
               style={{ cursor: "pointer" }}
             >
-
               <div className="property-image">
-                <img src={item.img} alt="property" />
-                <span className="property-tag">{item.tag}</span>
+                <img src={item.image} alt={item.title} />
+                <span className="property-tag">Completed</span>
               </div>
 
               <div className="property-info">
-                <p className="location">📍 River Oaks, Houston, Texas</p>
+                <p className="location">📍 {item.location}</p>
 
                 <div className="title-price">
                   <h3>{item.title}</h3>
@@ -96,11 +55,9 @@ function Section2() {
                   <span>📐 3,200 sq.ft</span>
                 </div>
               </div>
-
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

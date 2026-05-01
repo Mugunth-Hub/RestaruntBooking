@@ -18,32 +18,43 @@ function Header() {
     return () => clearInterval(interval);
   }, []);
 
-  return (
-    <div
-      className="header"
-      style={{ backgroundImage: `url(${images[index]})` }}
-      
-    >
-      <div className="header-text">
-        <h1>Buy or Sell Property</h1>
-        <p>With No Commission</p>
-      </div>
+ return (
+  <section
+    className="header"
+    style={{ backgroundImage: `url(${images[index]})` }}
+  >
+    <div className="header-content">
+      <span className="hero-badge">Premium Real Estate</span>
 
-      <div className="header-dots">
-        {images.map((_, i) => (
-          <span
-            key={i}
-            className={i === index ? "active" : ""}
-            onClick={(e) => {
-              e.stopPropagation();   // ⭐ prevents navigation when clicking dot
-              setIndex(i);
-            }}
-          ></span>
-        ))}
-      </div>
+      <h1>
+        Buy or Sell Property <br />
+        <span>With No Commission</span>
+      </h1>
 
+      <p>
+        Discover trusted properties, premium locations, and a smoother way to
+        find your dream home.
+      </p>
+
+      <button className="hero-btn">
+        Explore Properties
+      </button>
     </div>
-  );
+
+    <div className="header-dots">
+      {images.map((_, i) => (
+        <span
+          key={i}
+          className={i === index ? "active" : ""}
+          onClick={(e) => {
+            e.stopPropagation();
+            setIndex(i);
+          }}
+        ></span>
+      ))}
+    </div>
+  </section>
+);
 }
 
 export default Header;

@@ -1,71 +1,132 @@
 .mid {
   padding: 100px 8%;
-  background: #f5f5f5;
-  font-family: Arial, Helvetica, sans-serif;
+  background: #f6f6f6;
+  text-align: center;
 }
 
 /* HEADER */
 .mid-header {
-  max-width: 700px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
-.mid-header button {
+.badge {
+  display: inline-block;
   padding: 8px 18px;
   border-radius: 30px;
-  border: 1px solid #ccc;
-  background: transparent;
+  border: 1px solid #D4AF6A;
+  background: rgba(212, 175, 106, 0.1);
+  color: #D4AF6A;
   font-size: 14px;
-  margin-bottom: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
 
 .mid-header h1 {
   font-size: 40px;
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-weight: 800;
+  color: #111;
 }
 
-/* ROW */
-.mid-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-  margin-bottom: 120px;
+.mid-header h1 span {
+  color: #D4AF6A;
 }
 
-.mid-row.reverse {
-  flex-direction: row-reverse;
+/* GRID */
+.mid-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
-/* TEXT */
-.mid-text {
-  width: 45%;
+/* CARD */
+.mid-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: 0.3s;
 }
 
-.mid-text h2 {
-  font-size: 32px;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.mid-text h3 {
-  font-size: 22px;
-  margin-bottom: 15px;
-}
-
-.mid-text p {
-  color: #555;
-  line-height: 1.7;
+.mid-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
 /* IMAGE */
-.mid-image {
-  width: 50%;
+.mid-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
-.mid-image img {
-  width: 100%;
-  border-radius: 30px;
-  display: block;
+/* CONTENT */
+.mid-content {
+  padding: 20px;
+  text-align: left;
 }
+
+.mid-content h4 {
+  font-size: 14px;
+  color: #D4AF6A;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.mid-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.mid-content p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .mid-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .mid-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mid-header h1 {
+    font-size: 28px;
+  }
+}
+/* ===== SAFE GLOBAL SPACING CONTROL ===== */
+
+.home-section,
+.about-section,
+.projects-section,
+.services,
+.experts,
+.testimonial-section,
+.mid,
+.mid1-section,
+.mid2-section {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+}
+
+/* Reduce big title gaps only */
+.mid-header,
+.hero-header,
+.testimonial-left,
+.experts h2,
+.title {
+  margin-bottom: 35px !important;
+}
+
+/* Paragraph compact */
+p {
+  margin-bottom: 10px;
+}
+
+/* Do NOT touch bootstrap container / row / col */

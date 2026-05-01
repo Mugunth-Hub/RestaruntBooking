@@ -13,9 +13,8 @@ function Hero() {
      
 
       <h2 className="title">
-        EXPLORE OUR RANGE OF <br />
-        EXPERT REAL ESTATE SERVICES
-      </h2>
+  Explore Our <span>Expert Services</span>
+</h2>
 
       <div className="services-grid">
 

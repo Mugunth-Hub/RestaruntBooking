@@ -1,9 +1,9 @@
 .hero-section {
   padding: 80px 8%;
-  background: #f8f8f8;
+  background: #f5f5f5;
 }
 
-/* heading row */
+/* header */
 .hero-header {
   display: flex;
   justify-content: space-between;
@@ -12,16 +12,23 @@
 }
 
 .hero-header h2 {
-  font-size: 32px;
-  font-weight: 600;
+  font-size: 34px;
+  font-weight: 700;
+  color: #111;
 }
 
 .arrow {
   font-size: 28px;
   cursor: pointer;
+  color: #333;
+  transition: 0.3s;
 }
 
-/* card row */
+.arrow:hover {
+  color: #D4AF6A;
+}
+
+/* row */
 .hero-row {
   display: flex;
   gap: 30px;
@@ -29,67 +36,82 @@
 
 /* card */
 .hero-card {
-  background: white;
-  border-radius: 15px;
+  background: #ffffff;
+  border-radius: 18px;
   overflow: hidden;
   width: 33%;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-  transition: 0.3s;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.06);
+  transition: all 0.35s ease;
   cursor: pointer;
+  border: 1px solid #eee;
 }
 
 .hero-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
 }
 
 /* image */
 .image-wrapper {
   position: relative;
+  overflow: hidden;
 }
 
 .image-wrapper img {
   width: 100%;
-  height: 220px;
+  height: 230px;
   object-fit: cover;
+  transition: 0.4s;
 }
 
-/* badge */
+.hero-card:hover img {
+  transform: scale(1.05);
+}
+
+/* badge → GOLD */
 .badge {
   position: absolute;
   top: 15px;
   left: 15px;
-  background: #00b894;
-  color: white;
+  background: #D4AF6A;
+  color: #fff;
   padding: 6px 14px;
-  border-radius: 6px;
-  font-size: 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 /* content */
 .hero-content {
-  padding: 20px;
+  padding: 22px;
 }
 
+/* location */
 .location {
-  color: gray;
+  color: #777;
   font-size: 13px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
 }
 
+/* title */
 .hero-content h3 {
   font-size: 22px;
   margin-bottom: 10px;
+  color: #111;
 }
 
+/* description */
 .description {
   font-size: 14px;
   color: #555;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+  line-height: 1.6;
 }
 
+/* price → GOLD highlight */
 .price {
-  color: #27ae60;
+  color: #D4AF6A;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 700;
 }

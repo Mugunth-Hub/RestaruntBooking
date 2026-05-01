@@ -20,7 +20,7 @@ function Footer() {
                 Talk to our experts or browse through more properties
               </p>
 
-              <div className="d-flex gap-3 mt-4 flex-wrap">
+              <div className="d-flex gap-3 mt-4 flex-wrap justify-content-lg-start justify-content-center">
 
 <NavLink to="/contact" className="btn btn-outline-dark custom-btn">
   Contact us

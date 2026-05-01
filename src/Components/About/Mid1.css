@@ -1,72 +1,146 @@
 .experts {
   text-align: center;
-  padding: 80px 40px;
-  background: #f7f7f7;
+  padding: 100px 8%;
+  background: #f6f6f6;
 }
 
+/* TAG */
 .tag {
-  border: 1px solid #999;
-  background: transparent;
+  display: inline-block;
   padding: 8px 18px;
-  border-radius: 20px;
+  border-radius: 30px;
+  border: 1px solid #D4AF6A;
+  background: rgba(212, 175, 106, 0.1);
+  color: #D4AF6A;
+  font-size: 14px;
+  font-weight: 600;
   margin-bottom: 20px;
 }
 
+/* TITLE */
 .experts h2 {
-  font-size: 38px;
-  letter-spacing: 2px;
-  margin-bottom: 50px;
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 60px;
+  color: #111;
 }
 
+.experts h2 span {
+  color: #D4AF6A;
+}
+
+/* GRID */
 .experts-container {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
 }
 
-.expert-card{
-  width:230px;
-  text-align:center;
+/* CARD */
+.expert-card {
+  text-align: center;
+  transition: 0.3s;
 }
 
-.expert-img{
-  width:230px;
-  height:260px;
-  overflow:hidden;
-  border-radius:30px;
+.expert-card:hover {
+  transform: translateY(-8px);
 }
 
-.expert-img img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position: top;
-}
-.expert-photo{
-  object-fit:cover;
-  object-position:center;
+.expert-img {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 15px;
 }
 
-.expert-photo:last-child{
-  object-position:top;
+/* MAIN FIX */
+.expert-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* 👇 THIS IS THE KEY */
+  object-position: center top;
+}
+
+.expert-card:hover img {
+  transform: scale(1.08);
 }
 
 .expert-card h3 {
-  margin-top: 15px;
+  margin-top: 12px;
   font-size: 18px;
+  font-weight: 600;
 }
 
 .expert-card p {
-  font-size: 14px;
-  color: #666;
+  font-size: 13px;
+  color: #777;
+  margin-top: 4px;
 }
 
+/* BUTTON */
 .view-btn {
-  margin-top: 40px;
-  padding: 12px 25px;
-  border-radius: 25px;
-  border: 1px solid #000;
+  margin-top: 50px;
+  padding: 14px 30px;
+  border-radius: 30px;
+  border: 1px solid #D4AF6A;
   background: transparent;
+  color: #111;
+  font-weight: 500;
   cursor: pointer;
+  transition: 0.3s;
 }
+
+.view-btn:hover {
+  background: #D4AF6A;
+  color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .experts-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .experts-container {
+    grid-template-columns: 1fr;
+  }
+
+  .experts h2 {
+    font-size: 28px;
+  }
+}
+/* ===== SAFE GLOBAL SPACING CONTROL ===== */
+
+.home-section,
+.about-section,
+.projects-section,
+.services,
+.experts,
+.testimonial-section,
+.mid,
+.mid1-section,
+.mid2-section {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+}
+
+/* Reduce big title gaps only */
+.mid-header,
+.hero-header,
+.testimonial-left,
+.experts h2,
+.title {
+  margin-bottom: 35px !important;
+}
+
+/* Paragraph compact */
+p {
+  margin-bottom: 10px;
+}
+
+/* Do NOT touch bootstrap container / row / col */

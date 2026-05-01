@@ -14,7 +14,9 @@ function Mid2() {
 
   return (
     <div className="mid2-section">
-      <h2>Properties by Cities</h2>
+      <h2>
+        Properties by <span style={{color:"#D4AF6A"}}>Cities</span>
+      </h2>
 
       <div className="mid2-row">
         {cities.map((city, index) => (

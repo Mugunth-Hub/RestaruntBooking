@@ -1,69 +1,118 @@
 .mid2-section {
-  padding: 100px 80px;
-  background-color: #f5f5f5;
+  padding: 90px 8%;
+  background-color: #ffffff;
 }
 
 .mid2-section h2 {
-  font-size: 48px;
-  margin-bottom: 60px;
+  font-size: 46px;
+  margin-bottom: 50px;
+  color: #111;
+  font-weight: 700;
 }
 
+/* row */
 .mid2-row {
   display: flex;
-  gap: 30px;
-  margin-bottom: 60px;
+  gap: 26px;
+  margin-bottom: 50px;
 }
 
+/* card */
 .city-card {
   flex: 1;
-  height: 400px;
+  height: 380px;
   background-size: cover;
   background-position: center;
-  border-radius: 25px;
+  border-radius: 22px;
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: all 0.4s ease;
 }
 
+/* image zoom */
 .city-card:hover {
   transform: translateY(-8px);
 }
 
-.overlay {
+.city-card::before {
+  content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  color: white;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    transparent 100%
+  );
+  z-index: 1;
 }
 
-.overlay h3 {
-  font-size: 24px;
+/* content */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 24px;
+  z-index: 2;
+  color: #fff;
+}
+
+/* gold line */
+.overlay::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #D4AF6A;
   margin-bottom: 10px;
 }
 
-.overlay p {
-  font-size: 18px;
+/* text */
+.overlay h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+  font-weight: 700;
 }
 
+.overlay p {
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* button */
 .mid2-button {
   text-align: center;
 }
 
 .mid2-button button {
-  padding: 18px 60px;
-  background-color: #e0b86c;
+  padding: 14px 50px;
+  background-color: #D4AF6A;
   border: none;
-  font-size: 20px;
+  font-size: 16px;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
   transition: 0.3s;
 }
 
 .mid2-button button:hover {
-  background-color: #cda45d;
+  background-color: #c59d58;
+  transform: translateY(-2px);
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .mid2-row {
+    flex-direction: column;
+  }
+
+  .city-card {
+    height: 300px;
+  }
+
+  .mid2-section h2 {
+    font-size: 32px;
+  }
 }

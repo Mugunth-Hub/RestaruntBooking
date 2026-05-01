@@ -14,33 +14,34 @@ function Contact() {
     lastName: "",
     email: "",
     phone: "",
-    message: ""
+    message: "",
   });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
-  const submit = async (e) => {
-    e.preventDefault();
+ const submit = async (e) => {
+  e.preventDefault();
 
-    const dataToSend = {
-      name: `${formData.firstName} ${formData.lastName}`.trim(),
-      email: formData.email,
-      phone: formData.phone,
-      message: formData.message,
-      propertyId: propertyId,
-      propertyTitle: propertyTitle
-    };
+  const dataToSend = {
+    name: `${formData.firstName} ${formData.lastName}`.trim(),
+    email: formData.email,
+    phone: formData.phone,
+    message: formData.message,
+    propertyId: propertyId || "",
+    propertyTitle: propertyTitle || "General Enquiry",
+  };
 
-    console.log("Sending Data :", dataToSend);
+  console.log("Sending Data:", dataToSend);
 
-    try {
-      await axios.post("http://localhost:5000/contact", dataToSend);
+  try {
+    const res = await axios.post("http://localhost:5000/enquiries", dataToSend);
 
+      console.log("Success:", res.data);
       alert("Enquiry submitted successfully");
 
       setFormData({
@@ -48,11 +49,15 @@ function Contact() {
         lastName: "",
         email: "",
         phone: "",
-        message: ""
+        message: "",
       });
     } catch (error) {
-      console.log(error);
-      alert("Something went wrong");
+      console.log("Backend Error:", error.response?.data || error.message);
+      alert(
+        error.response?.data?.error ||
+          error.response?.data?.message ||
+          "Something went wrong"
+      );
     }
   };
 
@@ -121,6 +126,7 @@ function Contact() {
                 placeholder="Phone Number"
                 value={formData.phone}
                 onChange={handleChange}
+                required
               />
             </div>
 

@@ -1,57 +1,138 @@
 .services {
-  background: #f3f3f3;
+  background: #f6f6f6;
   padding: 100px 8%;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-
+/* TITLE */
 .title {
-  font-size: 36px;
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: 1px;
   margin-bottom: 60px;
+  color: #111;
 }
 
+/* GRID */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 35px;
+  gap: 30px;
 }
 
+/* CARD */
 .card {
-  background: #dcdcdc;
-  border-radius: 25px;
-  padding: 40px 30px;
+  position: relative;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 35px 28px;
   text-align: left;
-  transition: 0.3s;
+  border: 1px solid #eeeeee;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* gold top line */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: #D4AF6A;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.1);
 }
 
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+/* ICON */
 .icon-circle {
   width: 60px;
   height: 60px;
-  background: white;
+  background: rgba(212, 175, 106, 0.15);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
 }
 
 .icon-circle img {
-  width: 28px;
+  width: 26px;
+  filter: brightness(0) saturate(100%) invert(65%) sepia(28%) saturate(512%) hue-rotate(2deg) brightness(95%) contrast(90%);
 }
 
+/* TEXT */
 .card h3 {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  color: #111;
+  font-weight: 700;
 }
 
 .card p {
-  color: #444;
-  line-height: 1.6;
+  color: #555;
+  line-height: 1.7;
+  font-size: 14px;
 }
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+}
+.title span {
+  color: #D4AF6A;
+}
+/* ===== SAFE GLOBAL SPACING CONTROL ===== */
+
+.home-section,
+.about-section,
+.projects-section,
+.services,
+.experts,
+.testimonial-section,
+.mid,
+.mid1-section,
+.mid2-section {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+}
+
+/* Reduce big title gaps only */
+.mid-header,
+.hero-header,
+.testimonial-left,
+.experts h2,
+.title {
+  margin-bottom: 35px !important;
+}
+
+/* Paragraph compact */
+p {
+  margin-bottom: 10px;
+}
+
+/* Do NOT touch bootstrap container / row / col */

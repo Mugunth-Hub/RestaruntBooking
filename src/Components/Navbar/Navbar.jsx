@@ -16,10 +16,7 @@ function Navbar({ user, setUser }) {
     localStorage.removeItem("user");
 
     if (setUser) {
-      setUser({
-        name: "Guest",
-        photo: "",
-      });
+      setUser(null);
     }
 
     navigate("/");
@@ -45,41 +42,28 @@ function Navbar({ user, setUser }) {
 
       <div className="collapse navbar-collapse" id="navbarContent">
         <ul className="navbar-nav mx-auto gap-3">
-          <li className="nav-item">
-            <NavLink to="/home" className="nav-link">
-              Home
-            </NavLink>
-          </li>
+         <li className="nav-item">
+         <NavLink to="/home" className="nav-link">Home</NavLink>
+         </li>
 
-          <li className="nav-item">
-            <NavLink to="/about" className="nav-link">
-              About
-            </NavLink>
-          </li>
+         <li className="nav-item">
+         <NavLink to="/about" className="nav-link">About</NavLink>
+         </li>
 
-          <li className="nav-item">
-            <NavLink to="/projects" className="nav-link">
-              Projects
-            </NavLink>
-          </li>
+         <li className="nav-item">
+         <NavLink to="/projects" className="nav-link">Properties</NavLink>
+         </li>
 
-          <li className="nav-item">
-            <NavLink to="/gallery" className="nav-link">
-              Gallery
-            </NavLink>
-          </li>
-
-          <li className="nav-item">
-            <NavLink to="/contact" className="nav-link">
-              Contact
-            </NavLink>
-          </li>
+         <li className="nav-item">
+         <NavLink to="/contact" className="nav-link">Contact</NavLink>
+         </li>
         </ul>
 
         <div className="d-flex align-items-center gap-3 nav-right-box">
           <div
             onClick={() => navigate("/profile")}
             className="profile-wrapper"
+            style={{ cursor: "pointer" }}
           >
             {user?.photo ? (
               <img

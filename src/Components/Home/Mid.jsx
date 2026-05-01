@@ -5,7 +5,9 @@ function MidSection() {
   return (
     <div className="mid-section">
       <div className="mid-left">
-        <h2>Find Your Dream Property</h2>
+        <h2>
+          Find Your <span>Dream Property</span>
+        </h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Wisi nemore fastidii at vis, eos equidem admodum.

@@ -29,40 +29,35 @@ function Mid1() {
   ];
 
   return (
-   <section className="experts">
+    <section className="experts">
 
-  <button className="tag">Meet Our Experts</button>
+      <span className="tag">Meet Our Experts</span>
 
-  <h2>
-    PERSONALIZED GUIDENCE,<br />
-    PROVEN EXPERTIES
-  </h2>
+      <h2>
+        Personalized Guidance,<br />
+        <span>Proven Expertise</span>
+      </h2>
 
-  <div className="experts-container">
+      <div className="experts-container">
+        {experts.map((expert, index) => (
+          <div className="expert-card" key={index}>
+            
+            <div className="expert-img">
+              <img src={expert.img} alt={expert.name} />
+            </div>
 
-    {experts.map((expert, index) => (
+            <h3>{expert.name}</h3>
+            <p>{expert.role}</p>
 
-      <div className="expert-card" key={index}>
-
-        <div className="expert-img">
-          <img src={expert.img} alt={expert.name} />
-          <img src={expert.img} className="expert-photo" />
-        </div>
-
-        <h3>{expert.name}</h3>
-        <p>{expert.role}</p>
-
+          </div>
+        ))}
       </div>
 
-    ))}
+      <button className="view-btn">
+        View All Expert Agents ↗
+      </button>
 
-  </div>
-
-  <button className="view-btn">
-    View All Expert Agents ↗
-  </button>
-
-</section>
+    </section>
   );
 }
 
